@@ -17,7 +17,7 @@
   |     |
   |-- hal
   |     |
-  |-- miv-rv32-hal
+  |-- miv_rv32_hal
 
   
 ```
