@@ -8,7 +8,7 @@
   |-- drivers
   |     |- fpga_ip
   |     |     | CoreGPIO
-  |     |     | CoreSystemServices_PF
+  |     |     | CoreSysServices_PF
   |     |     | CoreUARTapb
   |     |
   |     |- off_chip
