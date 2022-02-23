@@ -11,6 +11,10 @@
 #ifndef MIV_WDOG_REGISTERS
 #define MIV_WDOG_REGISTERS          1u
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*------------------------------------------------------------------------------
  * Refresh register details
  */
@@ -111,4 +115,8 @@
 #define WDOGFORCE_MASK                               0xFFFFFFFFu
 #define WDOGFORCE_SHIFT                              0u
 
+#ifdef __cplusplus
+}
 #endif
+
+#endif /* MIV_WATCHDOG_REGS_H_ */

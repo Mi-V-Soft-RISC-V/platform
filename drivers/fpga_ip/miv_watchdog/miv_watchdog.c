@@ -10,10 +10,6 @@
 
 #include "miv_watchdog.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 addr_t g_this_wdog;
 
 /***************************************************************************//*
@@ -96,6 +92,3 @@ void MIV_WDOG_get_config
     }
 }
 
-#ifdef __cplusplus
-}
-#endif
