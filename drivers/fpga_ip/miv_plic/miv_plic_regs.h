@@ -5,11 +5,11 @@
  *
  * This file contains Register bit offsets and masks definitions for MI-V Soft
  * IP PLIC module driver. This module is delivered as a part of Mi-V extended
- * Sub-System(ESS).
+ * Sub-System(MIV_ESS).
  */
 
-#ifndef ESS_PLIC_REGISTERS
-#define ESS_PLIC_REGISTERS   1
+#ifndef MIV_PLIC_REGISTERS
+#define MIV_PLIC_REGISTERS   1
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,4 +24,8 @@ extern "C" {
 /* Interrupt claim complete register */
 #define INT_CLAIM_COMPLETE_REG_OFFSET               0x200004u
 
-#endif  /* ESS_PLIC_REGISTERS */
+#ifdef __cplusplus
+}
+#endif
+
+#endif  /* MIV_PLIC_REGISTERS */
