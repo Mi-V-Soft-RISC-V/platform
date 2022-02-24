@@ -10,10 +10,6 @@
 
 #include "miv_i2c.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #define MIV_I2C_ERROR                                   0xFFu
 
 /*------------------------------------------------------------------------------
@@ -767,7 +763,3 @@ MIV_I2C_get_status
 
     return i2c_status;
 }
-
-#ifdef __cplusplus
-}
-#endif
