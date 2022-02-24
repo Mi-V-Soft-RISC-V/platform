@@ -847,4 +847,8 @@ MIV_I2C_get_status
     miv_i2c_instance_t *this_i2c
 );
 
+#ifdef __cplusplus
+}
+#endif
+
 #endif  /* MIV_I2C_H_ */

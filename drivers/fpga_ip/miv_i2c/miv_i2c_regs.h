@@ -150,5 +150,9 @@ extern "C" {
 #define STAT_RXACK_MASK                             0x80u
 #define STAT_RXACK_SHIFT                            7u
 
+  
+#ifdef __cplusplus
+}
+#endif
 
 #endif   /* MIV_I2C_APB_REGISTERS */
