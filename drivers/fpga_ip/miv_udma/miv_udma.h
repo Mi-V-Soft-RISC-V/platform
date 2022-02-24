@@ -282,4 +282,8 @@ MIV_uDMA_read_status
     miv_udma_instance_t* this_pdma
 );
 
+#ifdef __cplusplus
+}
+#endif
+
 #endif  /* MIV_uDMA_H_ */

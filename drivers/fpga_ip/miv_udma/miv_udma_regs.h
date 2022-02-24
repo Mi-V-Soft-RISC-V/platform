@@ -87,5 +87,8 @@ extern "C" {
 #define BLK_SIZE_MASK                       0xFFFFFFFFu
 #define BLK_SIZE_SHIFT                      0x0u
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif  /* MIV_UDMA_APB_REGISTERS */ 
