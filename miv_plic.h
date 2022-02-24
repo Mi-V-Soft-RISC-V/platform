@@ -100,6 +100,14 @@
   interrupt 1 will be serviced first, followed by interrupt 6.
 
 */
+
+#ifndef MIV_PLIC_H_
+#define MIV_PLIC_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 #include "miv_plic_regs.h"
 
@@ -409,3 +417,9 @@ MIV_PLIC_disable_irq
     HAL_set_32bit_reg((this_plic->base_addr + (IRQn/32) + (hart_id * 128)), INT_ENABLE, current);
 
 }
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif  /* MIV_PLIC_H_ */

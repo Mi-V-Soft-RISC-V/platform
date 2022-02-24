@@ -10,10 +10,6 @@
  
 #include "miv_plic.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /***************************************************************************//**
  * Mi-V PLIC interrupt handler function declaration.
  * These functions are called by the external interrupt handler of the MIV_RV32
