@@ -18,7 +18,7 @@ extern "C" {
 
 #define MIV_RV32_HAL_VERSION_MAJOR 4
 #define MIV_RV32_HAL_VERSION_MINOR 2
-#define MIV_RV32_HAL_VERSION_PATCH 105
+#define MIV_RV32_HAL_VERSION_PATCH 106
 
 #ifdef __cplusplus
 }
