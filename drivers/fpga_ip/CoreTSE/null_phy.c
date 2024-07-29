@@ -1,5 +1,5 @@
 
-/*******************************************************************************
+/**
  * Copyright 2023 Microchip FPGA Embedded Systems Solutions.
  *
  * SPDX-License-Identifier: MIT
@@ -34,27 +34,18 @@ TSE_phy_init(tse_instance_t *this_tse, uint8_t phy_addr)
     /* Nothing to see here... */
 }
 
-/***************************************************************************/ /**
-
-  */
 void
 TSE_phy_set_link_speed(tse_instance_t *this_tse, uint8_t phy_addr, uint32_t speed_duplex_select)
 {
     /* Nothing to see here... */
 }
 
-/***************************************************************************/ /**
-
-  */
 void
 TSE_phy_autonegotiate(tse_instance_t *this_tse, uint8_t phy_addr)
 {
     /* Nothing to see here... */
 }
 
-/***************************************************************************/ /**
-
-  */
 uint8_t
 TSE_phy_get_link_status(tse_instance_t *this_tse,
                         uint8_t phy_addr,
@@ -70,5 +61,3 @@ TSE_phy_get_link_status(tse_instance_t *this_tse,
 #ifdef __cplusplus
 }
 #endif
-
-/******************************** END OF FILE ******************************/

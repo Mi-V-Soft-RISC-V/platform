@@ -1,5 +1,5 @@
 
-/*******************************************************************************
+/**
  * Copyright 2018 Microchip FPGA Embedded Systems Solutions.
  *
  * SPDX-License-Identifier: MIT
@@ -24,10 +24,10 @@ extern "C" {
 
 #define PAGE_0 0x00
 
-/* function prototypes ********************************************************/
+/*-------------------------- Function Prototypes ---------------------------------*/
 static void set_page(tse_instance_t *this_tse, uint8_t phy_addr, uint16_t page);
 
-/* functions ******************************************************************/
+/*-------------------------------- Functions ---------------------------------*/
 void
 TSE_phy_init(tse_instance_t *this_tse, uint8_t phy_addr)
 {
@@ -241,5 +241,3 @@ phy_far_end_loopback(tse_instance_t *this_tse, uint8_t phy_addr, int mode)
 #ifdef __cplusplus
 }
 #endif
-
-/******************************** END OF FILE ******************************/
