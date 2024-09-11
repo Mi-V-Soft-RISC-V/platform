@@ -333,13 +333,13 @@ NOTE: All these macros must not be defined if you are using a MIV_RV32 core.
  */
 #define MIMPID                          read_csr(mimpid)
 
-/*Used as a mask to read and write to mte mtvec.BASE address*/
-#define MTVEC_BASE_ADDR_MASK            0xFFFFFFFC
-
 #else
 #define MTIME                           (0u)
 #define MTIMEH                          (0u)
 #endif  /*MIV_RV32_EXT_TIMER*/
+
+/* Used as a mask to read and write to mtvec.BASE address */
+#define MTVEC_BASE_ADDR_MASK            0xFFFFFFFC
 
 /*-------------------------------------------------------------------------*//**
   RISC-V Specification Interrupts
