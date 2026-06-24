@@ -171,7 +171,7 @@ HW_set_8bit_reg:
  * @return          8 bits value read from the peripheral register.
  */
 HW_get_8bit_reg:
-    lb a0, 0(a0)
+    lbu a0, 0(a0)
     ret
 
 /***************************************************************************//**
