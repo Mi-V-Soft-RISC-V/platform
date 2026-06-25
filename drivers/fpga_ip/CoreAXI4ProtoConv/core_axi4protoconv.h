@@ -206,10 +206,10 @@ extern "C" {
   |                          | the received packet.                             |
 
  */
-#define S2MM_IE_DONE_IRQ             0x01u
-#define S2MM_IE_AXI4_ERR_IRQ         0x04u
-#define S2MM_IE_PKT_DROP_OVF_IRQ     0x08u
-#define S2MM_IE_PKT_DROP_ERR_IRQ     0x10u
+#define S2MM_IE_DONE_IRQ             0x01U
+#define S2MM_IE_AXI4_ERR_IRQ         0x04U
+#define S2MM_IE_PKT_DROP_OVF_IRQ     0x08U
+#define S2MM_IE_PKT_DROP_ERR_IRQ     0x10U
 
 /*-------------------------------------------------------------------------*//**
   MM2S Interrupt Identifier
@@ -225,8 +225,8 @@ extern "C" {
   | MM2S_IE_AXI4_ERR_IRQ     | MM2S AXI4 bus error is detected                  |
 
  */
-#define MM2S_IE_DONE_IRQ             0x01u
-#define MM2S_IE_AXI4_ERR_IRQ         0x04u
+#define MM2S_IE_DONE_IRQ             0x01U
+#define MM2S_IE_AXI4_ERR_IRQ         0x04U
 
 /***************************************************************************//**
  * This structure instance identifies various CoreAXI4ProtoConv hardware
@@ -258,6 +258,17 @@ typedef enum PCDMA_burst_type
     PCDMA_BURST_TYPE_INCR  = 1u
 }PCDMA_burst_type_t;
 
+/***************************************************************************//**
+  PCDMA_INVALID is used as an error return value to indicate an invalid
+  operation or parameter.
+ */
+#define PCDMA_INVALID     0xFFFFFFFFUL
+
+/***************************************************************************//**
+  Defines the maximum allowed width for the TUSER field
+ */
+#define MAX_TUSER_WIDTH   32U
+
 /*------------------------Public Function-------------------------------------*/
 
 /***************************************************************************//**
@@ -281,7 +292,7 @@ typedef enum PCDMA_burst_type
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR            0x60030000u
+    #define COREAXI4PROTOCONV_BASE_ADDR            0x60030000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -341,10 +352,10 @@ PCDMA_init
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
-    #define DDR_BASE_ADDR                               0x80010000u
-    #define S2MM_CMD_ID                                 0xb6
-    #define TRANSFER_SIZE_BYTES                         1000
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define S2MM_CMD_ID                                 0xb6U
+    #define TRANSFER_SIZE_BYTES                         1000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -377,10 +388,10 @@ void PCDMA_S2MM_configure
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
-    #define DDR_BASE_ADDR                               0x80010000u
-    #define S2MM_CMD_ID                                 0xb6
-    #define TRANSFER_SIZE_BYTES                         1000
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define S2MM_CMD_ID                                 0xb6U
+    #define TRANSFER_SIZE_BYTES                         1000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -410,10 +421,10 @@ void PCDMA_S2MM_start_transfer
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
-    #define DDR_BASE_ADDR                               0x80010000u
-    #define S2MM_CMD_ID                                 0xb6
-    #define TRANSFER_SIZE_BYTES                         1000
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define S2MM_CMD_ID                                 0xb6U
+    #define TRANSFER_SIZE_BYTES                         1000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -454,10 +465,10 @@ uint32_t PCDMA_S2MM_get_status
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
-    #define DDR_BASE_ADDR                               0x80010000u
-    #define S2MM_CMD_ID                                 0xb6
-    #define TRANSFER_SIZE_BYTES                         1000
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define S2MM_CMD_ID                                 0xb6U
+    #define TRANSFER_SIZE_BYTES                         1000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -499,10 +510,10 @@ void PCDMA_S2MM_enable_irq
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
-    #define DDR_BASE_ADDR                               0x80010000u
-    #define S2MM_CMD_ID                                 0xb6
-    #define TRANSFER_SIZE_BYTES                         1000
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define S2MM_CMD_ID                                 0xb6U
+    #define TRANSFER_SIZE_BYTES                         1000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -535,10 +546,10 @@ void PCDMA_S2MM_disable_irq
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
-    #define DDR_BASE_ADDR                               0x80010000u
-    #define S2MM_CMD_ID                                 0xb6
-    #define TRANSFER_SIZE_BYTES                         1000
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define S2MM_CMD_ID                                 0xb6U
+    #define TRANSFER_SIZE_BYTES                         1000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -580,10 +591,10 @@ uint32_t PCDMA_S2MM_get_int_src
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
-    #define DDR_BASE_ADDR                               0x80010000u
-    #define S2MM_CMD_ID                                 0xb6
-    #define TRANSFER_SIZE_BYTES                         1000
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define S2MM_CMD_ID                                 0xb6U
+    #define TRANSFER_SIZE_BYTES                         1000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -622,10 +633,10 @@ void PCDMA_S2MM_clr_int_src
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
-    #define DDR_BASE_ADDR                               0x80010000u
-    #define S2MM_CMD_ID                                 0xb6
-    #define TRANSFER_SIZE_BYTES                         1000
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define S2MM_CMD_ID                                 0xb6U
+    #define TRANSFER_SIZE_BYTES                         1000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -637,6 +648,49 @@ void PCDMA_S2MM_clr_int_src
   @endcode
  */
 uint32_t PCDMA_S2MM_get_len
+(
+   PCDMA_instance_t  * this_pcdma
+);
+#endif
+
+#ifdef IP_Config_S2MM_TUSER_DESCRIPTOR_ENABLE
+/***************************************************************************//**
+  The PCDMA_S2MM_get_tuser_sideband() function captures and returns the S2MM TUSER
+  sideband information sampled from the AXI4‑Stream interface. The value reflects
+  the TUSER descriptor sampled at the end of the most recent packet, specifically
+  when T_AXI4S_TLAST is asserted. This function is valid only when the S2MM TUSER
+  Descriptor Enable is set to 1. The width of the returned data corresponds to the
+  configured S2MM TUSER Descriptor Width. Any unused bits are reserved and read as zero.
+
+  @param this_pcdma
+  The this_pcdma parameter is a pointer to a PCDMA_instance_t structure that
+  holds all the data related to the CoreAXI4ProtoConv instance being
+  initialized. A pointer to this data structure is used in all subsequent calls
+  to the PCDMA driver functions that operate on this CoreAXI4ProtoConv instance.
+
+  @return
+  This function returns the S2MM TUSER sideband information.
+
+  @example
+  @code
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define S2MM_CMD_ID                                 0xb6U
+    #define TRANSFER_SIZE_BYTES                         1000U
+
+    PCDMA_instance_t  g_pcdma;
+
+    PCDMA_init(&g_pcdma, COREAXI4PROTOCONV_BASE_ADDR);
+    PCDMA_S2MM_enable_irq(&g_pcdma, S2MM_IE_DONE_IRQ | S2MM_IE_AXI4_ERR_IRQ);
+    PCDMA_S2MM_configure(&g_pcdma, TRANSFER_SIZE_BYTES, DDR_BASE_ADDR, \
+                                       S2MM_CMD_ID, PCDMA_BURST_TYPE_INCR);
+    PCDMA_S2MM_start_transfer(&g_pcdma);
+
+    while ((PCDMA_S2MM_get_status(&g_pcdma) & S2MM_IE_DONE_IRQ) == 0U);
+    uint32_t TUSER_SIDEBAND_DATA = PCDMA_S2MM_get_tuser_sideband(&g_pcdma);
+  @endcode
+ */
+uint32_t PCDMA_S2MM_get_tuser_sideband
 (
    PCDMA_instance_t  * this_pcdma
 );
@@ -681,10 +735,10 @@ uint32_t PCDMA_S2MM_get_len
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
-    #define DDR_BASE_ADDR                               0x80010000u
-    #define MM2S_CMD_ID                                 0xa6
-    #define TRANSFER_SIZE_BYTES                         1000
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define MM2S_CMD_ID                                 0xa6U
+    #define TRANSFER_SIZE_BYTES                         1000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -717,10 +771,10 @@ void PCDMA_MM2S_configure
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
-    #define DDR_BASE_ADDR                               0x80010000u
-    #define MM2S_CMD_ID                                 0xa6
-    #define TRANSFER_SIZE_BYTES                         1000
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define MM2S_CMD_ID                                 0xa6U
+    #define TRANSFER_SIZE_BYTES                         1000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -750,10 +804,10 @@ void PCDMA_MM2S_start_transfer
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
-    #define DDR_BASE_ADDR                               0x80010000u
-    #define MM2S_CMD_ID                                 0xa6
-    #define TRANSFER_SIZE_BYTES                         1000
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define MM2S_CMD_ID                                 0xa6U
+    #define TRANSFER_SIZE_BYTES                         1000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -793,10 +847,10 @@ uint32_t PCDMA_MM2S_get_status
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
-    #define DDR_BASE_ADDR                               0x80010000u
-    #define MM2S_CMD_ID                                 0xa6
-    #define TRANSFER_SIZE_BYTES                         1000
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define MM2S_CMD_ID                                 0xa6U
+    #define TRANSFER_SIZE_BYTES                         1000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -836,10 +890,10 @@ void PCDMA_MM2S_enable_irq
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
-    #define DDR_BASE_ADDR                               0x80010000u
-    #define MM2S_CMD_ID                                 0xa6
-    #define TRANSFER_SIZE_BYTES                         1000
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define MM2S_CMD_ID                                 0xa6U
+    #define TRANSFER_SIZE_BYTES                         1000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -872,10 +926,10 @@ void PCDMA_MM2S_disable_irq
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
-    #define DDR_BASE_ADDR                               0x80010000u
-    #define MM2S_CMD_ID                                 0xa6
-    #define TRANSFER_SIZE_BYTES                         1000
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define MM2S_CMD_ID                                 0xa6U
+    #define TRANSFER_SIZE_BYTES                         1000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -917,10 +971,10 @@ uint32_t PCDMA_MM2S_get_int_src
 
   @example
   @code
-    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
-    #define DDR_BASE_ADDR                               0x80010000u
-    #define MM2S_CMD_ID                                 0xa6
-    #define TRANSFER_SIZE_BYTES                         1000
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000U
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define MM2S_CMD_ID                                 0xa6U
+    #define TRANSFER_SIZE_BYTES                         1000U
 
     PCDMA_instance_t  g_pcdma;
 
@@ -937,6 +991,55 @@ void PCDMA_MM2S_clr_int_src
    PCDMA_instance_t  * this_pcdma,
    uint32_t irq_type
 );
+
+#ifdef IP_Config_MM2S_TUSER_DESCRIPTOR_ENABLE
+/***************************************************************************//**
+  The PCDMA_MM2S_set_tuser_sideband() function programs the MM2S TUSER Sideband
+  Register, which provides TUSER sideband information on the AXI4-Stream interface
+  during MM2S transfers. This function should be called only when the MM2S TUSER
+  Descriptor Enable is set to 1. The width of valid data written to the register
+  corresponds to the configured MM2S TUSER Descriptor Width. Any unused bits are
+  reserved and are ignored by the hardware.
+
+  @param this_pcdma
+  The this_pcdma parameter is a pointer to a PCDMA_instance_t structure that
+  holds all the data related to the CoreAXI4ProtoConv instance being
+  initialized. A pointer to this data structure is used in all subsequent calls
+  to the PCDMA driver functions that operate on this CoreAXI4ProtoConv instance.
+
+  @param tuser_value
+  Application-defined TUSER sideband value to be driven on the AXI4-Stream interface
+  during the MM2S transfer. Only the least significant bits corresponding to the
+  configured MM2S TUSER Descriptor Width are used.
+
+  @return
+  This function does not return any value.
+
+  @example
+  @code
+    #define COREAXI4PROTOCONV_BASE_ADDR                 0x60030000u
+    #define DDR_BASE_ADDR                               0x80010000U
+    #define MM2S_CMD_ID                                 0xa6U
+    #define TRANSFER_SIZE_BYTES                         1000U
+
+    PCDMA_instance_t  g_pcdma;
+
+    PCDMA_init(&g_pcdma, COREAXI4PROTOCONV_BASE_ADDR);
+    PCDMA_MM2S_enable_irq(&g_pcdma, MM2S_IE_DONE_IRQ | MM2S_IE_AXI4_ERR_IRQ);
+    PCDMA_MM2S_set_tuser_sideband(&g_pcdma, TUSER_value);
+    PCDMA_MM2S_configure(&g_pcdma, TRANSFER_SIZE_BYTES, DDR_BASE_ADDR, \
+                                          MM2S_CMD_ID, PCDMA_BURST_TYPE_INCR);
+
+    PCDMA_MM2S_start_transfer(&g_pcdma);
+
+  @endcode
+ */
+void PCDMA_MM2S_set_tuser_sideband
+(
+   PCDMA_instance_t  * this_pcdma,
+   uint32_t tuser_value
+);
+#endif
 
 #ifdef __cplusplus
 }
