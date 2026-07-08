@@ -1,32 +1,14 @@
-/*******************************************************************************
- * (c) Copyright 2025 Microchip FPGA Embedded Systems Solutions.
- * 
+/**
+ * Copyright 2025 Microchip FPGA Embedded Systems Solutions.
+ *
  * SPDX-License-Identifier: MIT
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to
- * deal in the Software without restriction, including without limitation the
- * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
- * sell copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
- * IN THE SOFTWARE.
  *
  * @file core_axi4protoconv.h
  * @author Microchip FPGA Embedded Systems Solutions
- * @brief This file contains the application programming interface for the
- * CoreAXI4ProtoConv IP bare metal driver.
+ * @brief CoreAXI4ProtoConv header file
  *
  */
+
 /*=========================================================================*//**
   @mainpage CoreAXI4ProtoConv Bare Metal Driver.
 
@@ -322,8 +304,8 @@ PCDMA_init
 
   @param xfr_size
   The xfr_size parameter specifies the total number of bytes to be transferred
-  from AXI4-Stream interface to the AXI4-Memory Mapped interface (S2MM).  
-  Note 1: xfr_size parameter must not program zero value.  
+  from AXI4-Stream interface to the AXI4-Memory Mapped interface (S2MM).
+  Note 1: xfr_size parameter must not program zero value.
   Note 2: When S2MM Undefined Burst Length Enable feature is enabled within the
          CoreAXI4ProtoConv IP configurator, configuring the xfr_size will have
          no effect. PCDMA_S2MM_get_len() provides the number of bytes received
@@ -341,9 +323,9 @@ PCDMA_init
 
   @param burst_type
   The burst_type parameter allows you to specify the burst type, which can be
-  either fixed burst or increment burst.  
+  either fixed burst or increment burst.
   Note 1: Fixed burst transfer should be used to access peripheral device which
-  supports fixed address like FIFO.  
+  supports fixed address like FIFO.
   Note 2: Increment burst transfer should be used to access peripheral device,
   which supports incremental address like SRAM.
 
@@ -456,7 +438,7 @@ uint32_t PCDMA_S2MM_get_status
       - S2MM_IE_DONE_IRQ
       - S2MM_IE_AXI4_ERR_IRQ
       - S2MM_IE_PKT_DROP_OVF_IRQ
-      - S2MM_IE_PKT_DROP_ERR_IRQ  
+      - S2MM_IE_PKT_DROP_ERR_IRQ
   To enable multiple interrupts in single call, use
       S2MM_IE_DONE_IRQ | S2MM_IE_AXI4_ERR_IRQ.
 
@@ -501,7 +483,7 @@ void PCDMA_S2MM_enable_irq
       - S2MM_IE_DONE_IRQ
       - S2MM_IE_AXI4_ERR_IRQ
       - S2MM_IE_PKT_DROP_OVF_IRQ
-      - S2MM_IE_PKT_DROP_ERR_IRQ  
+      - S2MM_IE_PKT_DROP_ERR_IRQ
   To disable multiple interrupts in single call, use
       S2MM_IE_DONE_IRQ | S2MM_IE_AXI4_ERR_IRQ.
 
@@ -582,7 +564,7 @@ uint32_t PCDMA_S2MM_get_int_src
       - S2MM_IE_DONE_IRQ
       - S2MM_IE_AXI4_ERR_IRQ
       - S2MM_IE_PKT_DROP_OVF_IRQ
-      - S2MM_IE_PKT_DROP_ERR_IRQ  
+      - S2MM_IE_PKT_DROP_ERR_IRQ
   To clear multiple interrupts in single call, use
       S2MM_IE_DONE_IRQ | S2MM_IE_AXI4_ERR_IRQ
 
@@ -709,7 +691,7 @@ uint32_t PCDMA_S2MM_get_tuser_sideband
 
   @param xfr_size
   The xfr_size parameter specifies the total number of bytes to be transferred
-  from AXI4-Memory Mapped interface to the AXI4-Stream interface (MM2S).  
+  from AXI4-Memory Mapped interface to the AXI4-Stream interface (MM2S).
   Note: xfr_size parameter must not program zero value.
 
   @param src_add
@@ -724,9 +706,9 @@ uint32_t PCDMA_S2MM_get_tuser_sideband
 
   @param burst_type
   The burst_type parameter allows you to specify the burst type, which can be
-  either fixed burst or increment burst.  
+  either fixed burst or increment burst.
   Note 1: Fixed burst transfer should be used to access peripheral device which
-  supports fixed address like FIFO.  
+  supports fixed address like FIFO.
   Note 2: Increment burst transfer should be used to access peripheral device,
   which supports incremental address like SRAM.
 
@@ -838,7 +820,7 @@ uint32_t PCDMA_MM2S_get_status
   The irq_type parameter specify the type of interrupt(s). The possible
   interrupts are:
       - MM2S_IE_DONE_IRQ
-      - MM2S_IE_AXI4_ERR_IRQ  
+      - MM2S_IE_AXI4_ERR_IRQ
   To enable both interrupts in single call, use
       MM2S_IE_DONE_IRQ | MM2S_IE_AXI4_ERR_IRQ
 
@@ -881,7 +863,7 @@ void PCDMA_MM2S_enable_irq
   The irq_type parameter specify the type of interrupt(s). The possible
   interrupts are:
       - MM2S_IE_DONE_IRQ
-      - MM2S_IE_AXI4_ERR_IRQ  
+      - MM2S_IE_AXI4_ERR_IRQ
   To disable both interrupts in single call, use
       MM2S_IE_DONE_IRQ | MM2S_IE_AXI4_ERR_IRQ
 
@@ -962,7 +944,7 @@ uint32_t PCDMA_MM2S_get_int_src
   The irq_type parameter specify the type of interrupt(s). The possible
   interrupts are:
       - MM2S_IE_DONE_IRQ
-      - MM2S_IE_AXI4_ERR_IRQ  
+      - MM2S_IE_AXI4_ERR_IRQ
   To disable both interrupts in single call, use
       MM2S_IE_DONE_IRQ | MM2S_IE_AXI4_ERR_IRQ
 

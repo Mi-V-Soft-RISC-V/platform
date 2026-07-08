@@ -6,9 +6,12 @@
  *
  * @file phy.h
  * @author Microchip FPGA Embedded Systems Solutions
- * @brief Register bit definitions for MII STA (station management entity) standard
- * interface. All basic MII register bits and enhanced capability register bits
- * are defined.
+ * @brief CoreTSE PHY header file
+ *
+ * Register bit definitions for MII STA (station management entity)
+ * standard interface. All basic MII register bits and enhanced capability
+ * register bits are defined.
+ *
  * Complies with Clauses 22, 28, 37, 40 of IEEE RFC 802.3
  *
  */
@@ -22,7 +25,9 @@
 extern "C" {
 #endif
 
-/*------------------------ Public definitions --------------------------------*/
+/**************************************************************************/
+/* Public definitions                                                     */
+/**************************************************************************/
 
 /* Generic MII registers. */
 #define MII_BMCR                     0x00u /* Basic mode control register */
@@ -197,27 +202,30 @@ extern "C" {
 #define ADVERTISED_10000baseKR_Full  (1 << 19)
 #define ADVERTISED_10000baseR_FEC    (1 << 20)
 
-/*----------------------- Public function declarations -----------------------*/
+/**************************************************************************/
+/* Public function declarations                                           */
+/**************************************************************************/
 
-/*
-  This function initialises the PHY interface.
- */
+/***************************************************************************/ /**
+
+  */
 void TSE_phy_init(tse_instance_t *this_tse, uint8_t phy_addr);
 
-/*
-  This function configures which speeds the link is advertised at.
- */
+/***************************************************************************/ /**
+
+  */
 void TSE_phy_set_link_speed(tse_instance_t *this_tse,
                             uint8_t phy_addr,
                             uint32_t speed_duplex_select);
-/*
-  Phy auto-negotiation function.
- */
+
+/***************************************************************************/ /**
+
+  */
 void TSE_phy_autonegotiate(tse_instance_t *this_tse, uint8_t phy_addr);
 
-/*
-  This function returns the current link status.
- */
+/***************************************************************************/ /**
+
+  */
 uint8_t TSE_phy_get_link_status(tse_instance_t *this_tse,
                                 uint8_t phy_addr,
                                 tse_speed_t *speed,

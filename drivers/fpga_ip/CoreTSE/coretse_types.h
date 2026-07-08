@@ -3,31 +3,12 @@
  *
  * SPDX-License-Identifier: MIT
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to
- * deal in the Software without restriction, including without limitation the
- * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
- * sell copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
- * IN THE SOFTWARE.
- *
- * CoreTSE 10/100/1000 Mbps Ethernet MAC bare metal software driver public API.
- *
  * @file coretse_types.h
  * @author Microchip FPGA Embedded Systems Solutions
- * @brief CoreTSE prototypes
+ * @brief CoreTSE type definition header file
  *
  */
+
 #ifndef CORE_TSE_TYPES_H_
 #define CORE_TSE_TYPES_H_
 
@@ -118,30 +99,6 @@ typedef void (*tse_transmit_callback_t)(void *p_user_data);
 typedef void (*tse_receive_callback_t)(uint8_t *p_rx_packet,
                                        uint32_t pckt_length,
                                        void *p_user_data);
-#ifndef CORE_TSE_IP_V3
-/**
-  The application must use this function prototype to define the transmit ECC double
-  bit error detection call-back function, which can be provided as a parameter to
-  `TSE_set_tx_ecc_ded_callback()`.
- */
-typedef void (*tse_tx_ecc_ded_callback_t)(void);
-
-/**
-  The application must use this function prototype to define the receive ECC double
-  bit error detection call-back function, which can be provided as a parameter to
-  `TSE_set_rx_ecc_ded_callback()`.
- */
-typedef void (*tse_rx_ecc_ded_callback_t)(void);
-
-#endif
-
-/**
-  The application must use this function prototype to define the statistics counter
-  carry event handler function, which can be provided as a parameter to `TSE_set_stats_callback()`.
- */
-typedef void (*tse_stats_callback_t)(void);
-
-
 
 /**
   The application must use this function prototype to define the WoL event
@@ -658,12 +615,6 @@ typedef struct tse_instance
     int16_t first_rx_desc_index;
     uint8_t phy_addr; /**< PHY address for this instance of CoreTSE*/
     tse_wol_callback_t wol_callback;
-    tse_stats_callback_t stats_callback;
-#ifndef CORE_TSE_IP_V3
-    tse_tx_ecc_ded_callback_t tx_ecc_ded_callback;
-    tse_rx_ecc_ded_callback_t rx_ecc_ded_callback;
-#endif
-
 } tse_instance_t;
 
 #ifdef __cplusplus

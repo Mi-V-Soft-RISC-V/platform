@@ -6,7 +6,7 @@
  *
  * @file vsc8575.c
  * @author Microchip FPGA Embedded Systems Solutions
- * @brief Microchip's VSC8575 PHY driver implementation.
+ * @brief Microchip's VSC8575 PHY source file
  *
  */
 
@@ -24,10 +24,10 @@ extern "C" {
 
 #define PAGE_0 0x00
 
-/*-------------------------- Function Prototypes ---------------------------------*/
+/* function prototypes ********************************************************/
 static void set_page(tse_instance_t *this_tse, uint8_t phy_addr, uint16_t page);
 
-/*-------------------------------- Functions ---------------------------------*/
+/* functions ******************************************************************/
 void
 TSE_phy_init(tse_instance_t *this_tse, uint8_t phy_addr)
 {
@@ -241,3 +241,5 @@ phy_far_end_loopback(tse_instance_t *this_tse, uint8_t phy_addr, int mode)
 #ifdef __cplusplus
 }
 #endif
+
+/******************************** END OF FILE ******************************/

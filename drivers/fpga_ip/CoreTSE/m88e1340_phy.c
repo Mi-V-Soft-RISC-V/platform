@@ -6,7 +6,7 @@
  *
  * @file m88e1340_phy.c
  * @author Microchip FPGA Embedded Systems Solutions
- * @brief Marvell's M88E1340 PHY interface driver implementation.
+ * @brief Marvell's M88E1340 PHY interface driver source file
  *
  */
 
@@ -20,14 +20,20 @@
 #include "fpga_design_config/fpga_design_config.h"
 #else
 #include "hw_platform.h"
-#endif /*LEGACY_DIR_STRUCTURE*/
+#endif  /*LEGACY_DIR_STRUCTURE*/
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+
 #if defined(M88E1340_PHY)
-/*------------- M88E1340 PHY Register Offsets and Bit Definitions ------------*/
+/***************************************************************************/ /**
+                                                                               * M88E1340 PHY
+                                                                               * specific register
+                                                                               * offsets and bit
+                                                                               * definitions
+                                                                               */
 #ifdef SYS_CLK_FREQ
 #define SYSTEM_CORE_CLOCK (SYS_CLK_FREQ)
 #endif
@@ -47,9 +53,14 @@ extern "C" {
 #define M88E1340_PHY_STATUS_RESOLVED   0x0800
 #define M88E1340_PHY_STATUS_LINK       0x0400
 
-/*------------------------ Preprocessor Macros -------------------------------*/
+/***************************************************************************/ /**
+                                                                               * Preprocessor Macros
+                                                                               */
 #define BMSR_AUTO_NEGOTIATION_COMPLETE 0x0020u
 
+/***************************************************************************/ /**
+                                                                               *
+                                                                               */
 void
 TSE_phy_init(tse_instance_t *this_tse, uint8_t phy_addr)
 {
@@ -66,6 +77,9 @@ TSE_phy_init(tse_instance_t *this_tse, uint8_t phy_addr)
     TSE_write_phy_reg(this_tse, phy_addr, MII_BMCR, phy_reg);
 }
 
+/**************************************************************************/ /**
+                                                                              *
+                                                                              */
 void
 TSE_phy_set_link_speed(tse_instance_t *this_tse, uint8_t phy_addr, uint32_t speed_duplex_select)
 {
@@ -107,6 +121,9 @@ TSE_phy_set_link_speed(tse_instance_t *this_tse, uint8_t phy_addr, uint32_t spee
     TSE_write_phy_reg(this_tse, phy_addr, MII_CTRL1000, phy_reg);
 }
 
+/**************************************************************************/ /**
+                                                                              *
+                                                                              */
 void
 TSE_phy_autonegotiate(tse_instance_t *this_tse, uint8_t phy_addr)
 {
@@ -138,6 +155,9 @@ TSE_phy_autonegotiate(tse_instance_t *this_tse, uint8_t phy_addr)
     }
 }
 
+/***************************************************************************/ /**
+                                                                               *
+                                                                               */
 uint8_t
 TSE_phy_get_link_status(tse_instance_t *this_tse,
                         uint8_t phy_addr,
@@ -205,3 +225,5 @@ TSE_phy_get_link_status(tse_instance_t *this_tse,
 #ifdef __cplusplus
 }
 #endif
+
+/******************************** END OF FILE ******************************/
