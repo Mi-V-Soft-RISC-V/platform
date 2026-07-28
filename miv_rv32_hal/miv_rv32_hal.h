@@ -715,8 +715,8 @@ static inline void MRV_set_mtvec_base (uint32_t mtvec_base)
  */
 static inline uint64_t MRV_read_mtime(void)
 {
-    volatile uint32_t hi = 0u;
-    volatile uint32_t lo = 0u;
+    uint32_t hi = 0u;
+    uint32_t lo = 0u;
 
     /* when mtime lower word is 0xFFFFFFFF, there will be rollover and
      * returned value could be wrong. */
@@ -725,7 +725,7 @@ static inline uint64_t MRV_read_mtime(void)
         lo = MTIME;
     } while(hi != MTIMEH);
 
-    return((((uint64_t)MTIMEH) << 32u) | lo);
+    return((((uint64_t)hi) << 32u) | lo);
 }
 
 /***************************************************************************//**
